@@ -12,12 +12,31 @@ const HomePage = () => {
   useEffect(() => {
     const requestTopRatedMovies = async () => {
       const getTopRatedMovies = await axios.get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=f80b29a7d56459271ea8fa3e057ddd97"
+        "/movie/top_rated"
       );
       setRecommendedMovies(getTopRatedMovies.data.results);
     };
     requestTopRatedMovies();
   }, []);
+  useEffect(() => {
+    const requestPopularMovies = async () => {
+      const getPopularMovies = await axios.get(
+        "/movie/popular"
+      );
+      setPremierMovies(getPopularMovies.data.results);
+    };
+    requestPopularMovies();
+  }, []);
+  useEffect(() => {
+    const requestUpcomingMovies = async () => {
+      const getUpcomingMovies = await axios.get(
+        "/movie/upcoming"
+      );
+      setOnlineStreamEvents(getUpcomingMovies.data.results);
+    };
+    requestUpcomingMovies();
+  }, []);
+
   return (
     <>
       <HeroCarousel />

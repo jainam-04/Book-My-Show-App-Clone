@@ -5,6 +5,7 @@ import Poster from "../poster/Poster.component";
 const PosterSliderComponent = (props) => {
   const {title, subtitle, posters, isDark} = props;
   const settings = {
+    dots: true,
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 4,

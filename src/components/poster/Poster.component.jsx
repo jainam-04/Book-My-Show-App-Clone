@@ -13,7 +13,7 @@ const PosterComponent = (props) => {
           />
         </div>
         <h3
-          className={`text-lg font-bold text-center ${
+          className={`text-lg font-bold ${
             props.isDark ? "text-white" : "text-gray-700"
           }`}
         >
