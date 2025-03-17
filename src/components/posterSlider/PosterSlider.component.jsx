@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import Poster from "../poster/Poster.component";
 
 const PosterSliderComponent = (props) => {
-  const {title, subtitle, posters, isDark} = props;
+  const {title, subtitle, posters, isDark, config} = props;
   const settings = {
     dots: true,
     infinite: true,
