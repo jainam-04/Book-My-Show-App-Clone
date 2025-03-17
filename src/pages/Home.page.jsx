@@ -1,13 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import DefaultLayoutHoc from "../layouts/Default.layout";
 import PosterSlider from "../components/posterSlider/PosterSlider.component";
 import EntertainmentCard from "../components/entertainment/EntertainmentCard.component";
 import HeroCarousel from "../components/heroCarousel/HeroCarousel.component";
+import axios from "axios";
 
 const HomePage = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [premierMovies, setPremierMovies] = useState([]);
   const [onlineStreamEvents, setOnlineStreamEvents] = useState([]);
+  useEffect(() => {
+    const requestTopRatedMovies = async () => {
+      const getTopRatedMovies = await axios.get(
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=f80b29a7d56459271ea8fa3e057ddd97"
+      );
+      setRecommendedMovies(getTopRatedMovies.data.results);
+    };
+    requestTopRatedMovies();
+  }, []);
   return (
     <>
       <HeroCarousel />

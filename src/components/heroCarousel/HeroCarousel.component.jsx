@@ -40,9 +40,7 @@ const HeroCarouselComponent = () => {
     },
   ]);
   const settingsLG = {
-    dots: true,
-    arrows: true,
-    slidesToShow: 1,
+    slidesToShow: 2,
     infinite: true,
     speed: 500,
     slideToScroll: 1,
@@ -53,7 +51,6 @@ const HeroCarouselComponent = () => {
     prevArrow: <PrevArrow />,
   };
   const settings = {
-    dots: true,
     arrows: true,
     slidesToShow: 1,
     infinite: true,
@@ -67,7 +64,7 @@ const HeroCarouselComponent = () => {
   };
   return (
     <>
-      <div className="lg:hidden">
+      <div className="lg:hidden container">
         <HeroSlider {...settings}>
           {images.map((image, index) => (
             <div className="w-full h-56 md:h-80 py-3" key={index}>
