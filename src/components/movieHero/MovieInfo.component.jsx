@@ -1,5 +1,6 @@
 import React, {useContext, useState} from "react";
 import {MovieContext} from "../../context/Movie.context";
+import PaymentModelComponent from "../paymentModel/PaymentModel.component";
 
 const MovieInfoComponent = () => {
   const {movie} = useContext(MovieContext);
@@ -14,9 +15,13 @@ const MovieInfoComponent = () => {
     setIsOpen(true);
     setPrice(199);
   };
-  //   return <PaymentModel setIsOpen={setIsOpen} isOpen={isOpen} price={price} />;
   return (
     <>
+      <PaymentModelComponent
+        setIsOpen={setIsOpen}
+        isOpen={isOpen}
+        price={price}
+      />
       <div className="flex flex-col gap-8">
         <h1 className="text-5xl font-bold text-white">
           {movie.original_title}
@@ -29,10 +34,16 @@ const MovieInfoComponent = () => {
           </h4>
         </div>
         <div className="flex items-center gap-3 text-xl px-4">
-          <button className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg">
+          <button
+            onClick={rentMovie}
+            className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg"
+          >
             Rent $149
           </button>
-          <button className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg">
+          <button
+            onClick={buyMovie}
+            className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg"
+          >
             Buy $999
           </button>
         </div>
