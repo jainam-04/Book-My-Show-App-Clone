@@ -39,7 +39,7 @@ const MovieNavbarComponent = () => {
             <span className="text-gray-200 text-base flex items-center cursor-pointer hover:text-white">
               Hospet <BiChevronDown />
             </span>
-            <button className="bg-red-600 text-white flex items-center cursor-pointer hover:text-white">
+            <button className="bg-red-600 text-white px-2 py-1 text-sm rounded">
               Sign In
             </button>
             <div className="w-8 h-8 text-white">
