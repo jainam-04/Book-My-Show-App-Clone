@@ -13,7 +13,7 @@ const MovieInfoComponent = () => {
   };
   const buyMovie = () => {
     setIsOpen(true);
-    setPrice(199);
+    setPrice(999);
   };
   return (
     <>
