@@ -7,7 +7,24 @@ const PaymentModelComponent = (props) => {
     props.setIsOpen(false);
   }
 
-  const launchRazorpay = () => {};
+  const launchRazorpay = () => {
+    let options = {
+      key: "rzp_test_pCXK0Fnm04GGMy",
+      amount: props.price * 100,
+      currency: "INR",
+      name: "Book My Show Clone",
+      description: "To purchase or rent the movie",
+      handler: () => {
+        setIsOpen(false);
+        alert("Payment Successful");
+      },
+      theme: {
+        color: "#c4242d",
+      },
+    };
+    let razorPay = window.Razorpay(options);
+    razorPay.open();
+  };
   return (
     <>
       <Transition appear show={props.isOpen} as={Fragment}>

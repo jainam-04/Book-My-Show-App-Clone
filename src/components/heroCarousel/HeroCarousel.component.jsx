@@ -40,7 +40,7 @@ const HeroCarouselComponent = () => {
     },
   ]);
   const settingsLG = {
-    slidesToShow: 2,
+    slidesToShow: 1,
     infinite: true,
     speed: 500,
     slideToScroll: 1,

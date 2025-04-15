@@ -24,4 +24,38 @@ const PosterComponent = (props) => {
   );
 };
 
-export default PosterComponent;
+const PlayPoster = (props) => {
+  return (
+    <a
+      href="https://in.bookmyshow.com/plays/a-night-on-broadway-a-musical-spectacular/ET00102267"
+      target="_blank"
+      rel="norefferer"
+    >
+      <div className="flex flex-col items-start gap-2 px-1 md:px-3">
+        <div className="h-40 md:h-80">
+          <img
+            src={props.src}
+            alt="Poster"
+            className="w-full h-full rounded-md object-cover object-center"
+          />
+        </div>
+        <h3
+          className={`text-lg font-bold ${
+            props.isDark ? "text-white" : "text-gray-700"
+          }`}
+        >
+          {props.title}
+        </h3>
+      </div>
+    </a>
+  );
+};
+
+const Poster = (props) => {
+  if (props.isPlay) {
+    return <PlayPoster {...props} />;
+  }
+  return <PosterComponent {...props} />;
+};
+
+export default Poster;
